@@ -7,7 +7,7 @@
 <div class="barHead text-dark">Release Status</div>
 </h5>
 <div class="first">
-  <div [ngStyle]="{'width.%':(Data.releasePerc*100), 'background':Data.colorLabel}" class="second"></div>
+  <div [ngStyle]="{'width.%':(Bar.releasePerc*100), 'background':Bar.Capacty}" class="second"></div>
 </div>
 </div>
 
@@ -17,7 +17,7 @@
 <Div class="barHead text-dark"> Sprint Capacity</Div>
 </h5>
 <div class="first footer">
- <div [ngStyle]="{'width.%':(Data.releasePerc*100), 'background':Data.sprintColor}" class="second"></div>
+ <div [ngStyle]="{'width.%':(Bar.releasePerc*100), 'background':Bar.sprintColor}" class="second"></div>
 </div>
 </div>
 

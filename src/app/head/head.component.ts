@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
+import { Observable } from 'rxjs';
 declare const bar: any;
 
 @Component({
@@ -9,8 +13,15 @@ declare const bar: any;
   '../../../node_modules/bootstrap/dist/css/bootstrap.min.css']
 })
 export class HeadComponent implements OnInit {
-  public Data : any;
- 
+   Data : any;
+   Projectselect : string;
+   Releaseselect : any;
+   Compselect : any;
+   Comp : any;
+   Arg : any;
+   Response : any;
+   Info : any;
+   Bar : any;
 
   constructor(private dataservice: ServiceService) { }
 
@@ -20,24 +31,72 @@ export class HeadComponent implements OnInit {
 
     this.dataservice.getParameter()
     .subscribe(data => {this.Data = data;
-    console.log(data);
-    this.date(this.Data);
-
-    });
+    console.log(this.Data);
     
+     });
+   
+    
+
+
   }
+  date(Info){
 
-  date(Data){
-
-    Data.rendDate = (new Date(Data.rendDate)).toDateString();
-    Data.rstartDate = new Date(Data.rstartDate).toDateString();
-    Data.sstartDate =(new Date(Data.sstartDate)).toDateString();
-    Data.sendDate = (new Date(Data.sendDate)).toDateString();
-    Data.project ="Release Dashboard";
+    Info.rendDate = (new Date(Info.rendDate)).toDateString();
+    Info.rstartDate = new Date(Info.rstartDate).toDateString();
+    Info.sstartDate =(new Date(Info.SstartDate)).toDateString();
+    Info.sendDate = (new Date(Info.SendDate)).toDateString();
+   // Data.project ="Release Dashboard";
     //Data.release ="Release1";
-    Data.releasePerc=(1-parseFloat( Data.releasePerc.toFixed(2)))*100;
+    Info.releasePerc=(1-parseFloat( Info.releasePerc.toFixed(2)))*100;
   console.log(this.Data)
-    bar(parseInt((Data.releasePerc)));
+    bar(parseInt((Info.releasePerc)));
 
   }
+  onProjectselect() : any{
+    console.log(this.Projectselect);
+    this.dataservice.getName(this.Projectselect)
+    .subscribe(response => {this.Response = response;
+      console.log(response);
+     
+  })
+
 }
+onReleaseselect() : any{
+  console.log(this.Releaseselect);
+  this.dataservice.getComp(this.Releaseselect)
+  .subscribe(response => {this.Comp = response;
+    console.log(response);
+   
+})
+
+}
+onCompselect() : any{
+  console.log(this.Compselect);
+  this.dataservice.getComp(this.Compselect)
+  .subscribe(response => {this.Arg = response;
+    console.log(response);
+   
+})
+}
+
+onButtonselect() : any
+{
+  this.dataservice.getDate()
+  .subscribe(data => {this.Info = data;
+  console.log(data);
+  this.date(this.Info);
+  })
+
+}
+
+
+
+
+}
+
+
+
+
+
+
+

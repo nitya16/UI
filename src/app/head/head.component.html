@@ -1,34 +1,51 @@
 
 
 <div class="bg shadow rounded-lg bg-light">
-  <div id="rls" class="text-success">{{Data.release}}</div>
-<Div id="heading" ><h1>{{Data.project}}</h1></Div>
+  <div id="rls" class="text-success">Select Release</div>
+<Div id="heading" ><h1>Release Health Dashboard</h1></Div>
 
+<select [(ngModel)]='Projectselect' (ngModelChange)='onProjectselect()'>
+  <option class ='dropbtn' *ngFor = 'let x of Data'[value]="x">{{x}}</option>
+</select>
+<h1>selected project is {{Projectselect}}</h1>
 
-<h4>
-<Div class="rdate text-secondary">Release StartDate - {{Data.rstartDate}}</Div>
-<Div class="rdate text-secondary">Release EndaDate - {{Data.rendDate}}</Div>
-</h4>
+<select [(ngModel)]='Releaseselect'(ngModelChange)='onReleaseselect()'>
+  <option *ngFor = 'let n of Response'[value] = "n">{{n}}</option> 
+</select>
+<h2>selected release is {{Releaseselect}}</h2>
 
+<select [(ngModel)]='Compselect'>
+  <option *ngFor = 'let p of Comp'[value] = "p">{{p}}</option> 
+</select>
+<h2>selected Component is {{Compselect}}</h2>
 
-<h4>
-<div class="Row shadow-sm bg-white rounded text-dark border">
-  <div class="column" >{{Data.sprint}}</div>
-  <div class="column" >{{Data.sstartDate}}</div>
-<div  class="column">{{Data.sendDate}}</div>
-
-</div>
-</h4>
-
-
-<!--  <button type="button" class="btn btn-light bg-white"> <h4> <div class="column" >{{Data.sprint}}</div>
-  <div class="column" >{{Data.SstartDate}}</div>
-<div  class="column">{{Data.SendDate}}</div> -->
-
-
-
-<div class="chart" id="graph" ></div>
-<div  id="per"><h4>{{Data.releasePerc}}%</h4></div>
-
+<button (click)="onButtonselect()">Select</button>
 
 </div>
+
+<h4>
+  <Div class="rdate text-secondary">Release StartDate - {{Info.rstartDate}}</Div>
+  <Div class="rdate text-secondary">Release EndaDate - {{Info.rendDate}}</Div>
+  </h4>
+  
+  <h4>
+  <div class="Row shadow-sm bg-white rounded text-dark border">
+    <div class="column" >{{Info.sprint}}</div>
+    <div class="column" >{{Info.sstartDate}}</div>
+  <div  class="column">{{Info.sendDate}}</div>
+  
+  </div>
+  </h4>
+  
+  <!--
+    <button type="button" class="btn btn-light bg-white"> <h4> <div class="column" >{{Info.sprint}}</div>
+    <div class="column" >{{Info.SstartDate}}</div>
+  <div  class="column">{{Info.SendDate}}</div> </h4></button>
+  
+
+  
+  <div class="chart" id="graph" ></div>
+  <div  id="per"><h4>{{Bar.releasePerc}}%</h4></div>
+  
+  -->
+  

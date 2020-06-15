@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {IParameter} from './BoardData';
 import { Observable } from 'rxjs';
 
@@ -8,22 +8,36 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
-  private url: string ='http://localhost:8080/ReleaseDashboard';
-   private _url : string ='http://localhost:8080/ReleaseDashboard';
+  private url: string ='https://my-json-server.typicode.com/ZaidBJ/Front/projects';
+   private _url : string ='https://my-json-server.typicode.com/ZaidBJ/Front/projects';
+   private _url1 : string = 'https://my-json-server.typicode.com/ZaidBJ/Front/';
+  private _url2 : string = 'https://my-json-server.typicode.com/ZaidBJ/Sample-Json/Release';
+  private _url3 : string = 'https://my-json-server.typicode.com/ZaidBJ/Sample-Json/ReleaseDate'
   constructor(private http: HttpClient) { }
-
-  getParameter(): Observable<IParameter>
+ 
+  getParameter()
   {
-    return this.http.post<IParameter>(this.url,{"project":"JIRARD",
-	"version":"Release1"
-},{headers:new HttpHeaders({'content-type': 'application/json'})});
+    return this.http.get(this.url)
+  }
+  getName(key)
+  {
+    
+    return this.http.get(this._url1 + key);
+  }
+   
+  getComp(para)
+  {
+    
+    return this.http.get(this._url1 + para);
   }
 
-   getProgress(): Observable<IParameter>
-  {
-  return this.http.post<IParameter>(this.url,{"project":"JIRARD",
-	"version":"Release1"
-},{headers:new HttpHeaders({'content-type': 'application/json'})});
-  }
 
+   getProgress()
+  {
+  return this.http.get(this._url2);
+  }
+  getDate()
+  {
+    return this.http.get(this._url3);
+  }
 }

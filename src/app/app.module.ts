@@ -8,7 +8,7 @@ import { ServiceService } from './service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CapacityComponent } from './capacity/capacity.component';
 import { ProgressComponent } from './progress/progress.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { ProgressComponent } from './progress/progress.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [ServiceService],

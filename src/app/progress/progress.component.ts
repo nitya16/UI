@@ -8,7 +8,7 @@ import { ServiceService } from '../service.service';
 })
 export class ProgressComponent implements OnInit {
 
- public Data : any;
+ Bar : any;
 
   constructor(private dataservice: ServiceService) { }
 
@@ -16,12 +16,12 @@ export class ProgressComponent implements OnInit {
 
 
     this.dataservice.getProgress()
-    .subscribe(data => {this.Data = data;
-    this.Data.releasePerc=0.6;
-    // if(this.Data.Capacty=='Red')
-    // this.Data.Capacty='#d42626';
-    //  if(this.Data.sprintColor=='Green')
-    // this.Data.sprintColor='#54a84c';
+    .subscribe(data => {this.Bar = data;
+    //this.Bar.releasePerc=0.6;
+     if(this.Bar.Capacty=='Red')
+     this.Bar.Capacty='#d42626';
+     if(this.Bar.sprintColor=='Green')
+     this.Bar.sprintColor='#54a84c';
     });
   }
 

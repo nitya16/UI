@@ -26,8 +26,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["./node_modules/jquery/dist/jquery.min.js","src/assets/script.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "src/assets/script.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Frontend"
+    }
+  },
+  "defaultProject": "Frontend",
+  "cli": {
+    "analytics": "cf0dfc92-8b2b-4fe2-894b-473b5820fe78"
+  }
 }
