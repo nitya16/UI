@@ -1,32 +1,35 @@
 
 
-<div class="bg shadow rounded-lg bg-light">
-  <div id="rls" class="text-success">Select Release</div>
+<div class="shadow p-3 mb-5 bg-white rounded">
 <Div id="heading" ><h1>Release Health Dashboard</h1></Div>
+<div class="container">
 
-<select [(ngModel)]='Projectselect' (ngModelChange)='onProjectselect()'>
-  <option class ='dropbtn' *ngFor = 'let x of Data'[value]="x">{{x}}</option>
+  <div class="col-lg-4 col-sm-4 col-xs-4">
+<select class="btn btn-primary w-50" [(ngModel)]='Projectselect' (ngModelChange)='onProjectselect()'>
+  <option class="p-3 mb-2 bg-secondary text-white" *ngFor = 'let x of Data'[value]="x">{{x}}</option>
 </select>
-<h1>selected project is {{Projectselect}}</h1>
+</div>
 
-<select [(ngModel)]='Releaseselect'(ngModelChange)='onReleaseselect()'>
-  <option *ngFor = 'let n of Response'[value] = "n">{{n}}</option> 
+
+<div class="col-lg-4 col-sm-4 col-xs-4">
+<select class="btn btn-primary w-50"  [(ngModel)]='Releaseselect'(ngModelChange)='onReleaseselect()'>
+  <option class="p-3 mb-2 bg-secondary text-white" *ngFor = 'let n of Response'[value] = "n">{{n}}</option> 
 </select>
-<h2>selected release is {{Releaseselect}}</h2>
+</div>
 
-<select [(ngModel)]='Compselect'>
-  <option *ngFor = 'let p of Comp'[value] = "p">{{p}}</option> 
+<div class="col-lg-4 col-sm-4 col-xs-4">
+<select class="btn btn-primary w-50" [(ngModel)]='Compselect'>
+  <option class="p-3 mb-2 bg-secondary text-white" *ngFor = 'let p of Comp'[value] = "p">{{p}}</option> 
 </select>
-<h2>selected Component is {{Compselect}}</h2>
-
-<button (click)="onButtonselect()">Select</button>
+</div>
 
 </div>
 
-<h4>
-  <Div class="rdate text-secondary">Release StartDate - {{Info.rstartDate}}</Div>
-  <Div class="rdate text-secondary">Release EndaDate - {{Info.rendDate}}</Div>
-  </h4>
+<button (click)="onButtonselect()">Select</button>
+
+
+
+
   
   <h4>
   <div class="Row shadow-sm bg-white rounded text-dark border">
@@ -36,6 +39,11 @@
   
   </div>
   </h4>
+  <h4>
+  <Div class="rdate text-secondary">Release StartDate - {{Info.rstartDate}}</Div>
+  <Div class="rdate text-secondary">Release EndaDate - {{Info.rendDate}}</Div>
+  </h4>
+  </div>
   
   <!--
     <button type="button" class="btn btn-light bg-white"> <h4> <div class="column" >{{Info.sprint}}</div>

@@ -32,8 +32,20 @@ export class HeadComponent implements OnInit {
     this.dataservice.getParameter()
     .subscribe(data => {this.Data = data;
     console.log(this.Data);
-    
+
+    });
+    this.Info={rstartDate:"",rendDate:"",sstartDate:"",sendDate:""};
+    this.dataservice.getParameter()
+    .subscribe(data => {
+
+
+    this.Data = data;
+    console.log(this.Data);
+
+    console.log(this.Info);
      });
+    
+    
    
     
 

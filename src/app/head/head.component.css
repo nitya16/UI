@@ -35,7 +35,7 @@ canvas {
 
 #heading{
   margin-top: 50px;
-  margin-left: 150px;
+  margin-left: 340px;
   margin-bottom: 70px;
   color:#306dcf;
 }
@@ -65,9 +65,16 @@ display: inline-block;
 
 
 .Row{
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-left: 320px;
+  width: 440px;
+}
+.Row1
+{
+  margin-top: 20 px;
   margin-left: 100px;
-  width: 420px;
+  width: 420;
+  size : 100;
 }
 .Row::after {
 
@@ -83,11 +90,10 @@ display: inline-block;
   margin-bottom:120px;
 }
 .dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+ 
+ background-color: white;
+  
+  font: black;
  
 }
 
