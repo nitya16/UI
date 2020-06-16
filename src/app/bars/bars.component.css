@@ -1,0 +1,44 @@
+.first {
+  height:18px;
+  width: 50%;
+  background: #ddd;
+  margin-bottom: 7%;
+  float: right;
+
+}
+.second {
+  height: 18px;
+  background: #0B9200;
+}
+
+.bar{
+margin-top:30px;
+margin-bottom:30px;
+padding-left:40px;
+padding-right:40px;
+padding-bottom:40px;
+padding-top:40px;
+height: 50%;
+width: 33%;
+float:left;
+max-height: 200px;
+overflow-y: scroll;
+}
+
+.barHead {
+font-weight: 800;
+font-size: medium;
+
+}
+
+
+.HeadingBar{
+
+  color:#306dcf;
+  margin-bottom:40px;
+}
+.noob {
+  font-size: small;
+  color:white;
+  text-align: center;
+}

@@ -1,3 +1,4 @@
+
 <div class="bar border">
   <h3 class="HeadingBar">Planning</h3>
     <span class="barHead text-dark">Release Status</span>
@@ -50,7 +51,31 @@
       </div>
     </div>
 
+    <div class="bar border">
+      <h3 class="HeadingBar">Planning</h3>
+        <span class="barHead text-dark">Release Status</span>
 
+        <div class="first">
+          <div
+            [ngStyle]="{
+              'width.%': Bar.releasePerc * 100,
+              background: Bar.Capacty
+            }"
+            class="second"
+          ><h6 class = "noob">37%</h6></div>
+      </div>
+    <br><br><br>
+        <span class="barHead text-dark"> Sprint Capacity</span>
+        <div class="first footer">
+          <div
+            [ngStyle]="{
+              'width.%': Bar.releasePerc * 100,
+              background: Bar.sprintColor
+            }"
+            class="second"
+          ><h6 class = "noob">37%</h6></div>
+        </div>
+      </div>
 
 
 
