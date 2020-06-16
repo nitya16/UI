@@ -22,6 +22,7 @@ export class HeadComponent implements OnInit {
    Response : any;
    Info : any;
    Bar : any;
+   Call : any;
 
   constructor(private dataservice: ServiceService) { }
 
@@ -47,7 +48,7 @@ export class HeadComponent implements OnInit {
     
     
    
-    
+     
 
 
   }
@@ -59,8 +60,8 @@ export class HeadComponent implements OnInit {
     Info.sendDate = (new Date(Info.SendDate)).toDateString();
    // Data.project ="Release Dashboard";
     //Data.release ="Release1";
-    Info.releasePerc=(1-parseFloat( Info.releasePerc.toFixed(2)))*100;
-  console.log(this.Data)
+   Info.releasePerc=(1-parseFloat( Info.releasePerc.toFixed(2)))*100;
+  console.log(this.Info)
     bar(parseInt((Info.releasePerc)));
 
   }
@@ -97,7 +98,15 @@ onButtonselect() : any
   .subscribe(data => {this.Info = data;
   console.log(data);
   this.date(this.Info);
+
+  
   })
+  this.dataservice.getProgress()
+     .subscribe(data => {this.Info = data;
+     console.log(this.Info);
+     this.date(this.Info);
+ 
+     });
 
 }
 
