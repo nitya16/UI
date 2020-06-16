@@ -102,9 +102,9 @@ onButtonselect() : any
   
   })
   this.dataservice.getProgress()
-     .subscribe(data => {this.Info = data;
-     console.log(this.Info);
-     this.date(this.Info);
+     .subscribe(data => {this.Call = data;
+     console.log(this.Call);
+     
  
      });
 
